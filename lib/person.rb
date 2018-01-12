@@ -15,7 +15,6 @@ class Person
     @bank_account = 25
     @happiness = 8
     @hygiene = 8
-
     @@all << self
   end
 
@@ -64,12 +63,8 @@ class Person
   end
 
   def call_friend(friend) #friend is another instance of the Person class
-    found_friend = self.class.all.find do |person|
-      person == friend
-    end
-
     self.happiness += 3
-    found_friend.happiness += 3
+    friend.happiness += 3
     "Hi #{friend.name}! It's #{self.name}. How are you?"
   end
 
